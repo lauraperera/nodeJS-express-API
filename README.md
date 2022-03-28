@@ -23,6 +23,12 @@ Existem 6 necessidades (constraints) para ser **RESTful**:
 - _Layered System_: Nesse exemplo o _graph.facebook_ é uma API e o _youtube_ é um endpoint (caminho onde quer chegar) https://graph.facebook.com/youtube. O cliente acessa um endpoint, sem precisar saber da compexidade, de quais passos estão sendo necessários para o servidor responder a req, ou quais outras **camadas** o servidor estará lidando para que a req seja atendida; 
 - _Code on demand (optional)_: O servidor manda pro cliente um **script** que pode ser executado no front. Dá a possibilidade da nossa aplicação pegar códigos (JS por ex.) e executar no cliente.
 
+# Verbos HTTP
+- GET: recebe os dados de um **resource**
+- POST: envia os dados a serem processados por um **resource**
+- PUT: atualiza os dados de um **resource**
+- DELETE: deleta um **resource**
+
 # Passo a passo do projeto:
 Iniciar o projeto
 ```
