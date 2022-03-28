@@ -11,7 +11,7 @@ API (application programming interface) é basicamente um conjunto de rotinas e 
 
 # REST
 
-REST (representational state transfer - transferência de estado representativo) é a transferência de dados de uma maneira represntativa/didática.
+REST (representational state transfer - transferência de estado representativo) é a transferência de dados de uma maneira representativa/didática (json ou xml).
 
 - A transferência de dados geralmente é feita usando **protocolo http** (bloquinho de notas do garçom).
 - Determina algumas obrigaçoes na transferência de dados;
@@ -22,6 +22,22 @@ Existem 6 necessidades (constraints) para ser **RESTful**:
 - _Cacheable_: As respostas para uma requisição deverão ser explicitas ao dizer se aquela req pode ou não ser cacheada pelo cliente;
 - _Layered System_: Nesse exemplo o _graph.facebook_ é uma API e o _youtube_ é um endpoint (caminho onde quer chegar) https://graph.facebook.com/youtube. O cliente acessa um endpoint, sem precisar saber da compexidade, de quais passos estão sendo necessários para o servidor responder a req, ou quais outras **camadas** o servidor estará lidando para que a req seja atendida; 
 - _Code on demand (optional)_: O servidor manda pro cliente um **script** que pode ser executado no front. Dá a possibilidade da nossa aplicação pegar códigos (JS por ex.) e executar no cliente.
+
+## Boas práticas
+- Utilizar verbos **http** nas requisições;
+- Não utilizar barras no final de endpoint (por ex. https://localhost:3000/clients/);
+- Não deixar o cliente sem resposta;
+
+## Status das respostas
+- 1xx: informação
+- 2xx: sucesso
+    - 200: OK
+    - 201: CREATED
+    - 204: não tem conteúdo PUT POST DELETE
+- 3xx: redirection
+- 4xx: client error
+    - 400: bad request
+    - 404: not found
 
 # Verbos HTTP
 - GET: recebe os dados de um **resource**
@@ -41,3 +57,5 @@ npm add express
 
 
 Referências de estudo [Rocketseat](https://www.youtube.com/watch?v=ghTrp1x_1As)
+\
+Dados do arquivo data.json [API JSON Placeholder](https://jsonplaceholder.typicode.com)
