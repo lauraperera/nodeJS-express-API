@@ -14,15 +14,20 @@ app.get('/clients', (req, res)=>{
 app.get('/clients/:id', (req, res)=>{
     const {id} = req.params;
     const client = clientsData.find(client => client.id == id);
-    
+
     //caso nao encontre o id retorna o status 204
     if(!client) return res.status(204).json();
 
     res.json(client);
 }); 
 
+//envia informações
 app.post('/clients', (req, res)=>{
-    res.json(clientsData);
+    const {name, email} = req.body;
+    //aqui vai a lógica pra salvar
+
+    //resposta
+    res.json({name, email});
 });
 
 //só pode atualizar 1 client
