@@ -26,7 +26,7 @@ Existem 6 necessidades (constraints) para ser **RESTful**:
 # Verbos HTTP
 - GET: recebe os dados de um **resource**
 - POST: envia os dados a serem processados por um **resource**
-- PUT: atualiza os dados de um **resource**
+- PUT: atualizas os dados de um **resource**
 - DELETE: deleta um **resource**
 
 # Passo a passo do projeto:
