@@ -21,7 +21,8 @@ Existem 6 necessidades (constraints) para ser **RESTful**:
 - _Stateless_: Cada requisição que o cliente faz para o servidor, deverá conter todas as informações necessárias pro servidor entender e responder **(response)** a requisição **(request)**, ele NÃO pode armazenar essas informações - nesse caso ele teria um ESTADO. _Exemplo: A sessão do usuário deverá ser enviada em todas as req, para saber se aquele usuário está autenticado e apto a usar os serviços, e o servidor não pode lembrar que o cliente foi atutenticado na req anterior_;
 - _Cacheable_: As respostas para uma requisição deverão ser explicitas ao dizer se aquela req pode ou não ser cacheada pelo cliente;
 - _Layered System_: Nesse exemplo o _graph.facebook_ é uma API e o _youtube_ é um endpoint (caminho onde quer chegar) https://graph.facebook.com/youtube. O cliente acessa um endpoint, sem precisar saber da compexidade, de quais passos estão sendo necessários para o servidor responder a req, ou quais outras **camadas** o servidor estará lidando para que a req seja atendida; 
-- _Code on demand (optional)_: O servidor manda pro cliente um **script** que pode ser executado no front. Dá a possibilidade da nossa aplicação pegar códigos (JS por ex.) e executar no cliente.
+- _Code on demand (optional)_: O servidor manda pro cliente um **script** que pode ser executado no front. Dá a possibilidade da nossa aplicação pegar códigos (JS por ex.) e executar no cliente;
+- _Uniform Interface_: Manter o mesmo padrão no desenvolvimento de toda a aplicação.
 
 ## Boas práticas
 - Utilizar verbos **http** nas requisições;
