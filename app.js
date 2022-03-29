@@ -32,7 +32,18 @@ app.post('/clients', (req, res)=>{
 
 //só pode atualizar 1 client
 app.put('/clients/:id', (req, res)=>{
-    
+    const {id} = req.params;
+    const client = clientsData.find(client => client.id == id);
+
+    //caso não tenha achado o cliente pra atualizar
+    if(!client) return res.status(204).json();
+
+    const {name} = req.body;
+
+    //client.name é igual ao novo nome que eu peguei do body
+    client.name = name;
+
+    res.json(client);
 }); 
 //só pode deletar 1 client
 app.delete('/clients/:id', (req, res)=>{
