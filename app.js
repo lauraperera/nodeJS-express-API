@@ -21,7 +21,7 @@ app.get('/clients/:id', (req, res)=>{
     res.json(client);
 }); 
 
-//envia informações
+//guardas informações
 app.post('/clients', (req, res)=>{
     const {name, email} = req.body;
     //aqui vai a lógica pra salvar
@@ -38,16 +38,21 @@ app.put('/clients/:id', (req, res)=>{
     //caso não tenha achado o cliente pra atualizar
     if(!client) return res.status(204).json();
 
-    const {name} = req.body;
+    const {name, email} = req.body;
 
     //client.name é igual ao novo nome que eu peguei do body
     client.name = name;
+    client.email = email;
 
     res.json(client);
 }); 
+
 //só pode deletar 1 client
 app.delete('/clients/:id', (req, res)=>{
+    const {id} = req.params;
+    const clientFiltered = clientsData.filter(client => client.id != id);
 
+    res.json(clientFiltered);
 }); 
 
 app.listen(port, ()=>{
